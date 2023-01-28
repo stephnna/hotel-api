@@ -3,7 +3,7 @@ class Api::V1::HotelsController < ApplicationController
 
   # GET /api/v1/hotels
   def index
-    @api_v2_hotels = Hotel.all
+    @api_v2_hotels = curren_user.hotels
 
     render json: @api_v1_hotels
   end
