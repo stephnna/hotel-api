@@ -12,7 +12,9 @@ Rails.application.routes.draw do
       resources :hotels
     end
     namespace :v1 do
-      resources :users
+      resources :users do
+        resources :hotels 
+      end
       post '/authentication/login', 'authentication#login'      
     end
   end
