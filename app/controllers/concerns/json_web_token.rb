@@ -12,6 +12,6 @@ module JsonWebToken
     decoded = JWT.decode(token, SECRET_KEY)[0]
     HashWithIndifferentAccess.new decoded
   rescue JWT::DecodeError => e
-    nil    
+    render json: {errors: e.message}, status: :unauthorized    
   end
 end
