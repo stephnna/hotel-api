@@ -1,9 +1,9 @@
 class Api::V1::HotelsController < ApplicationController  
   before_action :set_api_v1_hotel, only: %i[ show update destroy ]
 
-  # GET /api/v1/hotels
+  # GET /api/v1/users/:user_id/hotels
   def index
-    @api_v2_hotels = @current_user.hotels
+    @api_v1_hotels = @current_user.hotels
 
     render json: @api_v1_hotels
   end
