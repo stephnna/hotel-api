@@ -3,7 +3,7 @@ class Api::V1::HotelsController < ApplicationController
 
   # GET /api/v1/hotels
   def index
-    @api_v2_hotels = curren_user.hotels
+    @api_v2_hotels = @current_user.hotels
 
     render json: @api_v1_hotels
   end
@@ -15,7 +15,7 @@ class Api::V1::HotelsController < ApplicationController
 
   # POST /api/v1/hotels
   def create
-    @api_v1_hotel = current_user.hotels.new(api_v1_hotel_params)   
+    @api_v1_hotel = @current_user.hotels.new(api_v1_hotel_params)   
 
     if @api_v1_hotel.save
       render json: @api_v1_hotel, status: :created
