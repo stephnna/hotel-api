@@ -40,7 +40,7 @@ class Api::V4::BookingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Use callbacks to share common setup or constraints between action.
     def set_api_v4_booking
       @api_v4_booking = Booking.find(params[:id])
     end
